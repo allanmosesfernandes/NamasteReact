@@ -1,25 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Body from "./src/components/Body";
+import Header from "./src/components/Header";
 
-// this is JSX code
-const heading = (
-  <h1>
-    Hello World
-    <span>from React</span>
-  </h1>
-);
-
-/* Functional Component */
-const Title = () => <h3>this is from the title component</h3>;
-
-const Heading = () => {
+function App() {
   return (
-    <div className="container">
-      <Title />
-      <h1>Hello World from functional comp</h1>
-    </div>
+    // eslint-disable-next-line react/jsx-filename-extension
+    <>
+      <Header />
+      <Body />
+    </>
   );
-};
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Heading />);
+root.render(<App />);
