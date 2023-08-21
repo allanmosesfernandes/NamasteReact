@@ -1,6 +1,7 @@
 import React from "react";
 import RestuarantList from "./RestuarantList";
 import Search from "./Search";
+import { Outlet } from "react-router-dom";
 
 function Body() {
   return (

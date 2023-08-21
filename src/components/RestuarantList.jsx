@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RESTAURANT_LIST from "../utils/mockData";
 import RestaurantCard from "./RestaurantCard";
 import Search from "./Search";
+
 function RestuarantList() {
   const [restaurantList, setRestaurantList] = useState(RESTAURANT_LIST);
   return (
