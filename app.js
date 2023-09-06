@@ -3,20 +3,25 @@ import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   RouterProvider,
-  Link,
   Outlet,
 } from "react-router-dom";
+import { Provider } from "react-redux";
 import Body from "./src/components/Body";
 import Header from "./src/components/Header";
 import About from "./src/components/About";
+import RestaurantMenu from "./src/components/RestaurantMenu";
+import appStore from "./src/utils/appStore";
+import Cart from "./src/components/Cart";
 
 function App() {
   return (
     // eslint-disable-next-line react/jsx-filename-extension
-    <>
-      <Header />
-      <Outlet />
-    </>
+    <Provider store={appStore}>
+      <>
+        <Header />
+        <Outlet />
+      </>
+    </Provider>
   );
 }
 const router = createBrowserRouter([
@@ -31,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "menu/:restaurantID",
+        element: <RestaurantMenu />,
       },
     ],
   },
