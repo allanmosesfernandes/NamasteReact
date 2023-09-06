@@ -3,14 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: [],
+    items: ["burger", "pizza"],
   },
   reducers: {
     addItem: (state, action) => {
       state.items.push(action.payload);
     },
-    removeItem: (state, action) => {
-      state.items.pop(action.payload);
+    removeItem: (state) => {
+      state.items.pop();
     },
     clearCart: (state) => {
       // eslint-disable-next-line no-param-reassign

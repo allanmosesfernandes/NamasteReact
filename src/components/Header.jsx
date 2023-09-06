@@ -1,41 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import Logo from "../assets/images/logo.png";
 
 function Header() {
-  const cartItems = useSelector((state) => state.cart.items);
-  const [login, setLogin] = useState(false);
-  const loginHandler = () => setLogin(!login);
   return (
     <header>
       <nav>
         <div className="logo">
-          <Link to="/">
-            <img src={Logo} alt="logo" />
-          </Link>
+          <Link to="/"><img src={Logo} alt="logo" /></Link>
         </div>
         <div className="nav__links">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <a href="/">Home</a>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <a href="/about">About</a>
             </li>
             <li>
-              <Link to="/">Contact</Link>
+              <a href="/">Contact</a>
             </li>
-            <li>
-              <Link to="/cart">
-                Cart (
-                {cartItems.length}
-                )
-              </Link>
-            </li>
-            <button onClick={loginHandler} type="button">
-              {login ? "Logout" : "Login"}
-            </button>
           </ul>
         </div>
       </nav>
